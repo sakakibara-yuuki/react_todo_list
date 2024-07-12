@@ -7,37 +7,27 @@ import './App.css';
 
 function TitleLogo() { 
   const style = {
-    // width: '50%',
     display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
     justifyContent: 'center',
+    gap: '0.2rem',
+    height: '5vh',
+    paddingBottom: '0.2rem',
+    borderBottomStyle: 'solid',
   }
+
   return (
     <div style={style}>
-      <Logo className="App-logo" alt="logo"/>
-      <LogoText className="App-logo" alt="logo"/>
+      <Logo className="App-logo App-logo-animation"  viewBox="0 0 512 512" alt="logo"/>
+      <LogoText className="App-logo" viewBox="0 0 1696.703 512.01" alt="logo"/>
     </div>
   );
 }
 
-        // <img src={logo} className="App-logo" alt="logo" />
 export function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <header>
         <TitleLogo />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
     </div>
   );
