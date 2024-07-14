@@ -54,10 +54,24 @@
   /* border: 1px solid black; */
 }
 
+.progress-metrics {
+  writing-mode: vertical-rl;
+  transform: rotate(-180deg);
+  width: 100px;
+  height: 300px;
+  margin-left: -100px;
+}
+
+.progress-metrics_inside {
+  display: flex;
+  justify-content: space-evenly;
+  flex-grow: 1;
+}
+
 .progress-container {
 	overflow: hidden;
-	box-shadow:0 4px 20px rgba(0, 0, 0, 0.2);
-	width: 900px;
+	box-shadow:0 5px 20px rgba(0, 0, 0, 0.2);
+	width: 300px;
 	height: 300px;
     border-radius: 0.5rem;
 }
