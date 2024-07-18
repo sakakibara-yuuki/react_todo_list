@@ -1,0 +1,39 @@
+/*
+ * HeaderLogo.css
+ * Copyright (C) 2024 sakakibara
+ *
+ * Distributed under terms of the MIT license.
+ */
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 2.5rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo-animation {
+    animation: App-logo-spin 0.25s linear;
+  }
+}
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.header-logo {
+  display: flex;
+  gap: 0.2rem;
+  padding-bottom: 0.2rem;
+  /* border: 1px solid black; */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
