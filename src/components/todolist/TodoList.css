@@ -20,6 +20,13 @@
   background: var(--background);
   position: relative;
   display: grid;
+  padding: 0;
+  /* grid-template-columns: 30px auto 30px 30px; */
+}
+
+#checklist li {
+  list-style: none;
+  display: grid;
   grid-template-columns: 30px auto 30px 30px;
   align-items: center;
 }

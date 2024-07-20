@@ -8,7 +8,7 @@ import './Progress.css';
 
 export function Progress({ todoList }) {
   let total = todoList.length;
-  let done = 3;
+  let done = todoList.filter((todo) => todo.done).length;
   let rest = total - done;
   let levelViewBox = `0 ${300 * (done / total)} 900 300`;
   let wave = `M 0,600 v -300,0 q 150,-15 300,0 t 300,0 q 150,-15 300,0 v 300 Z`;
