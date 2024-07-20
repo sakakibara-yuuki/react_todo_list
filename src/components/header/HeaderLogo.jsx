@@ -11,7 +11,7 @@ import LogoText from '../logo/LogoText';
 export function HeaderLogo() { 
   return (
     <>
-    <div className="header-logo">
+    <div className="header-logo neumorphism">
       <Logo className="App-logo App-logo-animation"  viewBox="0 0 512 512" alt="logo"/>
       <LogoText className="App-logo" viewBox="0 0 1696.703 512.01" alt="logo"/>
     </div>

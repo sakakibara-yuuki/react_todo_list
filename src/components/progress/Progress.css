@@ -10,6 +10,7 @@
   grid-row: 1;
   display: flex;
   justify-content: center;
+  transition: all 0.3s ease;
   /* border: 1px solid black; */
 }
 
@@ -29,20 +30,16 @@
 
 .progress-container {
 	overflow: hidden;
-	box-shadow:0 5px 20px rgba(0, 0, 0, 0.2);
 	width: 300px;
 	height: 300px;
-    border-radius: 0.5rem;
 }
 
-.progress-container > svg {
+.progress-wave {
     width: 900px;
     height: 300px;
-    transform: scale(1);
-    border: 1px solid black;
 }
 
-.progress svg path {
+.progress path {
     fill: #3168dd;
     animation:wave linear 4s infinite;
 }

@@ -6,24 +6,27 @@
  */
 import './Progress.css';
 
-export function Progress() {
-  let start = 50;
-  let wave = `M 0,300 v -${start},0 q 150,-15 300,0 t 300,0 q 150,-15 300,0 v ${start} Z`;
+export function Progress({ todoList }) {
+  let total = todoList.length;
+  let done = 3;
+  let rest = total - done;
+  let levelViewBox = `0 ${300 * (done / total)} 900 300`;
+  let wave = `M 0,600 v -300,0 q 150,-15 300,0 t 300,0 q 150,-15 300,0 v 300 Z`;
   return (
     <div className="progress">
       <div className="progress-metrics">
-        <div>100</div>
+        <div>{ total }</div>
         <div className="progress-metrics_inside">
-          <div>10</div>
-          <div>90</div>
+          <div>{ done }</div>
+          <div>{ rest }</div>
         </div>
       </div>
-      <div className="progress-container">
-        <svg className="progress-wave"xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300">
-          <path d={wave} />
+      <div className="progress-container neumorphism">
+        <svg className="progress-wave"xmlns="http://www.w3.org/2000/svg" viewBox={levelViewBox}>
+          <path d={ wave } />
         </svg>
         <svg>
-          <path d={wave} />
+          <path d={ wave } />
         </svg>
       </div>
     </div>

@@ -2,9 +2,7 @@
 // import LogoText from '../components/logo/LogoText';
 import './App.css';
 import { HeaderLogo } from '../components/header/HeaderLogo';
-import { Progress } from '../components/progress/Progress';
-import { TodoInput } from '../components/todoinput/TodoInput';
-import { TodoList } from '../components/todolist/TodoList';
+import { Todo } from '../components/todo/Todo';
 
 export function App() {
   return (
@@ -14,9 +12,7 @@ export function App() {
       </header>
       <main>
         <div className="container">
-          <Progress/>
-          <TodoInput/>
-          <TodoList/>
+          <Todo />
         </div>
       </main>
     </div>

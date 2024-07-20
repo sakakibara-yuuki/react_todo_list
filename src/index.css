@@ -11,3 +11,10 @@
 /*   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', */
 /*     monospace; */
 /* } */
+
+.neumorphism {
+  border: 1px solid #bebebe;
+  border-radius: 0.5rem;
+  box-shadow:  5px 5px 10px #bebebe,
+               -5px -5px 10px #ffffff;
+}
