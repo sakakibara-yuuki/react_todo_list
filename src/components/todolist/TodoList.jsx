@@ -5,12 +5,35 @@
  * Distributed under terms of the MIT license.
  */
 import './TodoList.css';
-import { useState } from 'react';
+import { memo, useState } from 'react';
 
 
-export function TodoList({ todoList, setTodoList, changeItem, editItem, deleteItem }) {
+export const TodoList = memo(({ todoList, setTodoList }) => {
 
   const [todoText, setText] = useState('');
+
+  function changeItem( todoChanged ) {
+    setTodoList(todoList.map((todo) => {
+      if (todo.id === todoChanged.id) {
+        todo.done = !todo.done;
+      }
+      return todo;
+    }));
+  }
+
+  function editItem( todoEdited ) {
+    setTodoList(todoList.map((todo) => {
+      if (todo.id === todoEdited.id) {
+        todo.isEditing = !todo.isEditing;
+      }
+      return todo;
+    }));
+  }
+
+  function deleteItem( todoDeleted ) {
+    const confirm = window.confirm('Do you really delete it ?');
+    confirm && setTodoList(todoList.filter((todo) => todo.id !== todoDeleted.id));
+  }
 
   function updateItem(todoChanged) {
     setTodoList(todoList.map((todo) => {
@@ -20,6 +43,7 @@ export function TodoList({ todoList, setTodoList, changeItem, editItem, deleteIt
       }
       return todo;
     }));
+    setText('');
   }
 
   return (
@@ -27,14 +51,16 @@ export function TodoList({ todoList, setTodoList, changeItem, editItem, deleteIt
       <ul id="checklist">
         {todoList.map((todo) => (
           <li key={todo.id}>
-            <input type="checkbox" id={todo.id} onChange={(event) => changeItem(event, todo)}/>
+            <input type="checkbox" id={todo.id} onChange={() => changeItem(todo)}/>
 
             {
               todo.isEditing ?
               <>
                 <input type="text" name={`${todo.id}-save`} value={todoText} onChange={e => setText(e.target.value)}/>
                 <button className="todo-list__button save" name={`${todo.id}-save`} onClick={() => updateItem(todo)}>
-                  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="m16 0c8.836556 0 16 7.163444 16 16s-7.163444 16-16 16-16-7.163444-16-16 7.163444-16 16-16zm5.7279221 11-7.0710679 7.0710678-4.2426406-4.2426407-1.4142136 1.4142136 5.6568542 5.6568542 8.4852814-8.4852813z" fill="#202327"/></svg>
+                  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" className="icon save">
+                    <path d="m16 0c8.836556 0 16 7.163444 16 16s-7.163444 16-16 16-16-7.163444-16-16 7.163444-16 16-16zm5.7279221 11-7.0710679 7.0710678-4.2426406-4.2426407-1.4142136 1.4142136 5.6568542 5.6568542 8.4852814-8.4852813z" fill="#202327"/>
+                  </svg>
                 </button>
               </> :
               <>
@@ -58,4 +84,4 @@ export function TodoList({ todoList, setTodoList, changeItem, editItem, deleteIt
       </ul>
     </div>
   );
-}
+});

@@ -5,9 +5,10 @@
  * Distributed under terms of the MIT license.
  */
 import './TodoInput.css';
+import { memo } from 'react';
 
 
-export function TodoInput( { addItem } ) {
+export const TodoInput = memo(({ addItem }) => {
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -34,4 +35,4 @@ export function TodoInput( { addItem } ) {
       </button>
     </form>
   );
-}
+});

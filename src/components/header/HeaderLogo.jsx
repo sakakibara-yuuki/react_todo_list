@@ -7,8 +7,9 @@
 import './HeaderLogo.css';
 import Logo from '../logo/Logo';
 import LogoText from '../logo/LogoText';
+import { memo } from 'react';
 
-export function HeaderLogo() { 
+export const HeaderLogo = memo(() => { 
   return (
     <>
     <div className="header-logo neumorphism">
@@ -17,4 +18,4 @@ export function HeaderLogo() {
     </div>
     </>
   );
-}
+});

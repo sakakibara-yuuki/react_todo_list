@@ -5,8 +5,10 @@
  * Distributed under terms of the MIT license.
  */
 import './Progress.css';
+import { memo } from 'react';
 
-export function Progress({ todoList }) {
+
+export const Progress = memo(({ todoList }) => {
   let total = todoList.length;
   let done = todoList.filter((todo) => todo.done).length;
   let rest = total - done;
@@ -31,5 +33,5 @@ export function Progress({ todoList }) {
       </div>
     </div>
   );
-}
+});
 

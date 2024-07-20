@@ -72,8 +72,8 @@
 }
 
 .todo-input__add .icon {
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   transition: .2s linear;
   fill: none;
 }
@@ -87,7 +87,7 @@
 }
 
 .todo-input__add:hover > .icon path {
-  fill: rgb(0, 177, 0);
+  fill: rgb(0, 0, 177);
 }
 
 .todo-input__add:active {

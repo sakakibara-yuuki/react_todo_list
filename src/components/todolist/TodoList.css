@@ -247,7 +247,11 @@
 }
 
 .todo-list__button:hover > .icon.edit path {
-  fill: rgb(0, 0, 177);
+  fill: rgb(0, 177, 0);
+}
+
+.todo-list__button:hover > .icon.save path {
+  fill: rgb(0, 177, 0);
 }
 
 .todo-list__button:active {
