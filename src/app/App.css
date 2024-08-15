@@ -1,0 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: auto minmax(250px, auto) auto;
+  grid-template-rows: auto auto auto;
+}
+
+.container > * {
+  margin-top: 2rem;
+}
+
