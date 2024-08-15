@@ -4,8 +4,7 @@
  *
  * Distributed under terms of the MIT license.
  */
-import { useState } from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 
 const ProgressMetrics = (props) => {
