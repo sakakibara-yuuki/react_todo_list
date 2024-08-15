@@ -2,7 +2,7 @@
 // import LogoText from '../components/logo/LogoText';
 import './App.css';
 import { HeaderLogo } from '../components/molecules/header/HeaderLogo';
-import { Todo } from '../components/todo/Todo';
+import { Todo } from '../components/organism/Todo';
 
 export function App() {
   return (
