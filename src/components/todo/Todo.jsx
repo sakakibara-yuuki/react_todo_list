@@ -4,9 +4,9 @@
  *
  * Distributed under terms of the MIT license.
  */
-import { Progress } from '../progress/Progress';
-import { TodoInput } from '../todoinput/TodoInput';
-import { TodoList } from '../todolist/TodoList';
+import { Progress } from '../molecules/progress/Progress';
+import { TodoInput } from '../molecules/todoinput/TodoInput';
+import { TodoList } from '../molecules/todolist/TodoList';
 import { useState } from 'react';
 
 

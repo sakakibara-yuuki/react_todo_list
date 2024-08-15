@@ -6,6 +6,7 @@
  */
 import './TodoList.css';
 import { memo, useState } from 'react';
+import styled from 'styled-components';
 
 
 export const TodoList = memo(({ todoList, setTodoList }) => {
@@ -47,8 +48,8 @@ export const TodoList = memo(({ todoList, setTodoList }) => {
   }
 
   return (
-    <div className="todo-list">
-      <ul id="checklist">
+    <StyledTodoList>
+      <StyledCheckList id="checklist">
         {todoList.map((todo) => (
           <li key={todo.id}>
             <input type="checkbox" id={todo.id} onChange={() => changeItem(todo)}/>
@@ -81,7 +82,25 @@ export const TodoList = memo(({ todoList, setTodoList }) => {
 
           </li>
         ))}
-      </ul>
-    </div>
+      </StyledCheckList>
+    </StyledTodoList>
   );
 });
+
+const StyledTodoList = styled.div`
+  grid-column: 2;
+  grid-row: 3;
+  display: flex;
+  justify-content: center;
+`;
+
+const StyledCheckList = styled.ul`
+  --background: #fff;
+  --check: black;
+  --disabled: #c3c8de;
+  width: 300px;
+  background: var(--background);
+  position: relative;
+  display: grid;
+  padding: 0;
+`;
